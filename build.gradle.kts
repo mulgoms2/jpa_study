@@ -9,9 +9,26 @@ repositories {
     mavenCentral()
 }
 
+sourceSets{
+    main{
+        resources {
+            srcDirs("src/main/resources/META-INF")
+            output.resourcesDir = file("build/classes/")
+        }
+    }
+}
+
 dependencies {
+    implementation("org.hibernate.orm:hibernate-core:6.4.4.Final")
+    implementation("com.h2database:h2:2.2.224")
+    implementation("org.apache.logging.log4j:log4j-slf4j-impl:2.23.1")
+
+
     testImplementation(platform("org.junit:junit-bom:5.9.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
+
+    compileOnly("org.projectlombok:lombok:1.18.32")
+    annotationProcessor("org.projectlombok:lombok:1.18.32")
 }
 
 tasks.test {
