@@ -1,6 +1,11 @@
 package com.study.jpa;
 
+import com.study.jpa.domain.Member;
 import jakarta.persistence.*;
+
+import java.time.LocalDateTime;
+import java.util.List;
+
 public class JpaMain {
     public static void main(String[] args) {
         // 단 하나만 생성해야 한다. 어플리케이션 전체에서 공유
@@ -12,14 +17,20 @@ public class JpaMain {
         tx.begin();
 
         try {
-//            Member member = new Member();
-//            member.setId(1L);
-//            member.setName("mulgom");
-//            entityManager.persist(member);
-            Member member = entityManager.find(Member.class, 1L);
-            member.setName("mulgomo");
+            Member member = Member.builder()
+                    .name("mulgom")
+                    .userType(Member.UserType.USER)
+                    .age(10)
+                    .createdDate(LocalDateTime.now())
+                    .build();
+//
+            entityManager.persist(member);
 
-            // 트랜잭션이 일어나기 전에 더티체킹을 해서 업데이트(동기화)가 진행된다.
+//            System.out.println(getAsList(entityManager, Member.class));
+
+            // 멤버객체의 id를 autoincrement 로 바꿔보자
+
+            // 트랜잭션이 일어나기 전에 더티체킹을 해서 db 업데이트(동기화)가 진행된다.
             tx.commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -30,5 +41,10 @@ public class JpaMain {
         }
 
         emf.close();
+    }
+
+    private static List<?> getAsList(EntityManager em, Class<?> clazz) {
+        return em.createQuery("select m from Member m", clazz)
+                .getResultList();
     }
 }
