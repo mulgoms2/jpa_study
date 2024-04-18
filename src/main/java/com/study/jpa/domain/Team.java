@@ -1,18 +1,26 @@
 package com.study.jpa.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.*;
+import lombok.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-@NoArgsConstructor
-@AllArgsConstructor
+@Table(name = "teams")
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Getter
+@Setter
 public class Team {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private String football;
+    private String name;
+    @OneToMany(mappedBy = "team", cascade = CascadeType.PERSIST)
+    private final List<Member> members = new ArrayList<>();
+
+    @Builder
+    public Team(String name) {
+        this.name = name;
+    }
 }

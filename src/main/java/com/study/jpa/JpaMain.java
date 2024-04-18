@@ -1,6 +1,7 @@
 package com.study.jpa;
 
 import com.study.jpa.domain.Member;
+import com.study.jpa.domain.Minwoo;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;

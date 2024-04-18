@@ -14,13 +14,11 @@ public class ItemTest {
     @DisplayName("고객은 상품을 주문할 수 있다.")
     void custom_buy_product() {
         Member member = Member.builder()
-                .id(1L)
                 .name("mulgom")
                 .createdDate(LocalDateTime.now())
                 .build();
 
         Item item = Item.builder()
-                .id(1L)
                 .name("bread")
                 .price(BigInteger.valueOf(100000L))
                 .quantity(100)
@@ -28,9 +26,9 @@ public class ItemTest {
 
 
         // 회원은 상품을 주문한다.
-//        Order order = member.order(item);
+        Order order = member.order(item);
 
-//        assertThat(order).isNotNull();
+        assertThat(order).isNotNull();
     }
 
 
