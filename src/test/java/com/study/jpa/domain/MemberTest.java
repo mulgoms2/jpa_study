@@ -82,6 +82,7 @@ class MemberTest {
         member.setTeam(team);
         entityManager.persist(member);
 
+
 //        entityManager.flush();
 //        entityManager.clear();
 
