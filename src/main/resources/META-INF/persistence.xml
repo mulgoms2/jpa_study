@@ -6,7 +6,7 @@
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
             <property name="javax.persistence.jdbc.user" value="sa"/>
             <property name="javax.persistence.jdbc.password" value=""/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/test"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/study"/>
 <!--            dialect 란 특정 db 제품에서 사용되는 언어 모음이다. dialect로 추상화 된 언어묶음을 Jpa가 사용한다. -->
             <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
             
@@ -15,6 +15,22 @@
             <property name="hibernate.use_sql_comments" value="true"/>
             <property name="hibernate.hbm2ddl.auto" value="update"/>
             <property name="hibernate.id.new_generator_mappings" value="true"/>
+        </properties>
+    </persistence-unit>
+    <persistence-unit name="jpa_test">
+        <properties>
+        <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+        <property name="javax.persistence.jdbc.user" value="sa"/>
+        <property name="javax.persistence.jdbc.password" value=""/>
+        <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/test"/>
+        <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+
+        <property name="hibernate.show_sql" value="true"/>
+        <property name="hibernate.format_sql" value="true"/>
+        <property name="hibernate.use_sql_comments" value="true"/>
+        <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+<!--            <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create"/>-->
+        <property name="hibernate.id.new_generator_mappings" value="true"/>
         </properties>
     </persistence-unit>
 </persistence>
