@@ -18,7 +18,7 @@ class Item {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     // many 가 항상 연관관계의 주인이다.
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     private Order order;
     private String name;
     private BigInteger price;

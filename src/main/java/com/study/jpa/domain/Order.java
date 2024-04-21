@@ -6,6 +6,7 @@ import lombok.*;
 import java.math.BigInteger;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -32,6 +33,15 @@ class Order {
         this.orderDate = orderDate;
         this.orderPrice = orderPrice;
         this.status = status;
+    }
+
+    public static Order makeOrder(Item... items) {
+        BigInteger totalPrice = Arrays.stream(items)
+                .map(item -> item.getPrice())
+                .reduce(BigInteger::add)
+                .get();
+
+        return new Order(LocalDateTime.now(), totalPrice, Status.ORDER);
     }
 
     public boolean addItem(Item... items) {

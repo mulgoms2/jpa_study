@@ -22,7 +22,6 @@ public class JpaMain {
                     .name("mulgom")
                     .userType(Member.UserType.USER)
                     .age(10)
-                    .createdDate(LocalDateTime.now())
                     .build();
 //
             entityManager.persist(member);

@@ -15,7 +15,6 @@ public class ItemTest {
     void custom_buy_product() {
         Member member = Member.builder()
                 .name("mulgom")
-                .createdDate(LocalDateTime.now())
                 .build();
 
         Item item = Item.builder()

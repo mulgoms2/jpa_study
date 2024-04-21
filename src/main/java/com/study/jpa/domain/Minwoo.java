@@ -2,30 +2,65 @@ package com.study.jpa.domain;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
 
 @Entity
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Minwoo {
-    private String name;
-    private Integer age;
+public class Minwoo extends CommonDate {
     @Id
     private Long id;
+    private String name;
+    private Integer age;
 
-    @Builder
+    protected Minwoo() {
+    }
+
     private Minwoo(String name, Integer age) {
         this.name = name;
         this.age = age;
     }
 
-    public static Minwoo getInstance(String name, Integer age) {
-        return Minwoo.builder()
-                .name("me")
-                .age(2)
-                .build();
+    protected Minwoo(MinwooBuilder<?, ?> builder) {
+        super(builder);
+        this.age = builder.age;
+        this.name = builder.name;
+    }
+
+    public static MinwooBuilder<?, ?> builder() {
+        return new MinwooBuilderImpl();
+    }
+
+    public static abstract class MinwooBuilder<C extends Minwoo, B extends MinwooBuilder<C, B>> extends CommonDateBuilder<C, B> {
+        private String name;
+        private Integer age;
+
+        public B name(String name) {
+            this.name = name;
+            return self();
+        }
+
+        public B age(Integer age) {
+            this.age = age;
+            return self();
+        }
+
+        public abstract C build();
+
+        @Override
+        protected abstract B self();
+        // 왜 롬복 빌더는 내부클래스에 toString이 구현되어있을까?
+    }
+
+    private static final class MinwooBuilderImpl extends MinwooBuilder<Minwoo, MinwooBuilderImpl> {
+        private MinwooBuilderImpl() {
+        }
+
+        @Override
+        protected MinwooBuilderImpl self() {
+            return this;
+        }
+
+        public Minwoo build() {
+            return new Minwoo(this);
+        }
     }
 
 }
