@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="66ad0e7b-8e76-4823-9b45-8dffd360016e" name="Changes" comment="4~5days : @MappedSuperclass 를 활용한 공통속성 정의 및, embedded 값타입을 record 클래스로 정의하기">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/study/jpa/domain/IdCard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/study/jpa/domain/OrderItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/study/jpa/domain/People.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/study/jpa/domain/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/study/jpa/domain/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/study/jpa/domain/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/study/jpa/domain/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/study/jpa/domain/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/study/jpa/domain/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/study/jpa/domain/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/study/jpa/domain/ItemTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/study/jpa/domain/ItemTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/study/jpa/domain/MemberTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/study/jpa/domain/MemberTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/spring_jpa">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/spring_jpa">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="jpa_study_java" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="JUnit5 Test Class" />
+        <option value="package.json" />
+        <option value="Record" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;mulgoms2&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="2ba069bd-3de8-42db-bb52-ca7f6e7bed05" />
+        <option name="url" value="https://github.com/mulgoms2/jpa_study.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2fAkiRrdKLU1U6Y6XHI6BfebcaW" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Application.JpaMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Build jpa_study_java.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Build spring_jpa.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.BuilderTest.abstractNestedClass.executor&quot;: &quot;Debug&quot;,
+    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ItemTest.custom_buy_product.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.MemberTest.elementCollectionDelete.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.MemberTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.MemberTest.setEngage.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.MemberTest.superClass.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.MemberTest.test.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.MemberTest.voDeleteTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ProductTest.custom_buy_product.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.SpringJpaApplicationTests.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Upgrade Gradle wrapper.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.jpa_study_java [:JpaMain.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.jpa_study_java [:Main.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.jpa_study_java [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.jpa_study_java [check].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.SpringJpaApplication.executor&quot;: &quot;Run&quot;,
+    &quot;ToolWindowBuild.ShowToolbar&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;21&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/dobigulbi/IdeaProjects/jpa_study_java/src/test/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Java&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;java.sql.Driver&quot;,
+      &quot;h2&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.my.spring_jpa" />
+      <recent name="com.study.jpa.domain" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/build/classes/java" />
+      <recent name="$PROJECT_DIR$/build/classes" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveInnerDialog.RECENTS_KEY">
+      <recent name="com.study.jpa.domain" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.study.jpa.domain" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.study.jpa.domain" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Gradle.MemberTest.setEngage">
+    <configuration name="JpaMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.study.jpa.JpaMain" />
+      <module name="jpa_study_java.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.study.jpa.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ItemTest.custom_buy_product" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.study.jpa.domain.ItemTest.custom_buy_product&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="MemberTest.setEngage" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.study.jpa.domain.MemberTest.setEngage&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="MemberTest.superClass" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.study.jpa.domain.MemberTest.superClass&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="SpringJpaApplicationTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/spring_jpa" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.my.spring_jpa.SpringJpaApplicationTests&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="SpringJpaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="spring_jpa.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.my.spring_jpa.SpringJpaApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.JpaMain" />
+      <item itemvalue="Gradle.MemberTest.setEngage" />
+      <item itemvalue="Gradle.ItemTest.custom_buy_product" />
+      <item itemvalue="Gradle.SpringJpaApplicationTests" />
+      <item itemvalue="Gradle.MemberTest.superClass" />
+      <item itemvalue="Spring Boot.SpringJpaApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.MemberTest.setEngage" />
+        <item itemvalue="Application.JpaMain" />
+        <item itemvalue="Gradle.ItemTest.custom_buy_product" />
+        <item itemvalue="Gradle.SpringJpaApplicationTests" />
+        <item itemvalue="Gradle.MemberTest.superClass" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="66ad0e7b-8e76-4823-9b45-8dffd360016e" name="Changes" comment="" />
+      <created>1713251398246</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1713251398246</updated>
+      <workItem from="1713251399487" duration="314000" />
+      <workItem from="1713251736982" duration="4008000" />
+      <workItem from="1713260155293" duration="10892000" />
+      <workItem from="1713277759403" duration="687000" />
+      <workItem from="1713278480283" duration="1481000" />
+      <workItem from="1713348480799" duration="5308000" />
+      <workItem from="1713354249800" duration="1439000" />
+      <workItem from="1713357943649" duration="9311000" />
+      <workItem from="1713414835672" duration="715000" />
+      <workItem from="1713415561074" duration="7607000" />
+      <workItem from="1713424174683" duration="5275000" />
+      <workItem from="1713440654604" duration="4278000" />
+      <workItem from="1713449469049" duration="6902000" />
+      <workItem from="1713605027934" duration="7722000" />
+      <workItem from="1713619793999" duration="10549000" />
+      <workItem from="1713690200662" duration="2479000" />
+      <workItem from="1713697781087" duration="1336000" />
+      <workItem from="1713706704006" duration="634000" />
+      <workItem from="1713763229476" duration="6622000" />
+      <workItem from="1713926986026" duration="3443000" />
+      <workItem from="1713930465120" duration="1313000" />
+      <workItem from="1713931789335" duration="164000" />
+    </task>
+    <task id="LOCAL-00001" summary="First commit">
+      <option name="closed" value="true" />
+      <created>1713251649695</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1713251649695</updated>
+    </task>
+    <task id="LOCAL-00002" summary="day 1 : 엔티티매니저 팩토리와 엔티티 매니저">
+      <option name="closed" value="true" />
+      <created>1713279091743</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1713279091743</updated>
+    </task>
+    <task id="LOCAL-00003" summary="day 2 : 엔티티 매핑과 연관관계">
+      <option name="closed" value="true" />
+      <created>1713354849081</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1713354849081</updated>
+    </task>
+    <task id="LOCAL-00004" summary="day 3 : 연관관계 설정과 영속성 케스케이드 옵션">
+      <option name="closed" value="true" />
+      <created>1713420745312</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1713420745312</updated>
+    </task>
+    <task id="LOCAL-00005" summary="k">
+      <option name="closed" value="true" />
+      <created>1713450813062</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1713450813062</updated>
+    </task>
+    <task id="LOCAL-00006" summary="3days : 양방향 연관 관계와 객체지향적인 양방향 매핑, 1차캐시 조회시 데이터 무결성 유지">
+      <option name="closed" value="true" />
+      <created>1713450870913</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1713450870913</updated>
+    </task>
+    <task id="LOCAL-00007" summary="4~5days : @MappedSuperclass 를 활용한 공통속성 정의 및, embedded 값타입을 record 클래스로 정의하기">
+      <option name="closed" value="true" />
+      <created>1713696324114</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1713696324114</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="First commit" />
+    <MESSAGE value="day 1 : 엔티티매니저 팩토리와 엔티티 매니저" />
+    <MESSAGE value="day 2 : 엔티티 매핑과 연관관계" />
+    <MESSAGE value="day 3 : 연관관계 설정과 영속성 케스케이드 옵션" />
+    <MESSAGE value="k" />
+    <MESSAGE value="3days : 양방향 연관 관계와 객체지향적인 양방향 매핑, 1차캐시 조회시 데이터 무결성 유지" />
+    <MESSAGE value="4~5days : @MappedSuperclass 를 활용한 공통속성 정의 및, embedded 값타입을 record 클래스로 정의하기" />
+    <option name="LAST_COMMIT_MESSAGE" value="4~5days : @MappedSuperclass 를 활용한 공통속성 정의 및, embedded 값타입을 record 클래스로 정의하기" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/study/jpa/domain/MemberTest.java</url>
+          <line>102</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/study/jpa/domain/MemberTest.java</url>
+          <line>87</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/build/classes/java/main/com/study/jpa/domain/Member.class</url>
+          <line>77</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/study/jpa/domain/Item.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/spring_jpa/src/test/java/com/my/spring_jpa/SpringJpaApplicationTests.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/spring_jpa/src/main/java/com/my/spring_jpa/SpringJpaApplication.java</url>
+          <line>6</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/study/jpa/JpaMain.java</url>
+          <line>10</line>
+          <properties class="com.study.jpa.JpaMain" method="main">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

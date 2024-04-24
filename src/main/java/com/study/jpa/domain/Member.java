@@ -21,7 +21,7 @@ public class Member extends CommonDate {
     private Long id;
     private String name;
 
-    @Enumerated(EnumType.ORDINAL)
+    @Enumerated(EnumType.STRING)
     private UserType userType;
 
     private int age;
@@ -45,15 +45,20 @@ public class Member extends CommonDate {
         ADMIN, USER
     }
 
-    public Order order(Item... items) {
-        // 회원이 상품을 주문한다.
-        Order order = Order.makeOrder(items);
-
-        // 회원의 주문 목록에 주문을 추가한다.
-        this.orders.add(order);
-        order.setMember(this);
-
-        // 생성 된 주문을 반환한다.
-        return order;
-    }
+    //    회원이 상품을 주문하면 주문상품이 되는게 자연스럽지 않을까?
+    // 주문을 만드는데에 회원의 정보가 필요하다고도 볼 수 있다.
+//    public Order order(Item... items, int count) {
+//        // 회원이 상품을 주문한다.
+//
+//        // 아이템을 주문 아이템으로 변경한다.
+//
+//        Order order = Order.makeOrder(orderItems);
+//
+//        // 회원의 주문 목록에 주문을 추가한다.
+//        this.orders.add(order);
+//        order.setMember(this);
+//
+//        // 생성 된 주문을 반환한다.
+//        return order;
+//    }
 }

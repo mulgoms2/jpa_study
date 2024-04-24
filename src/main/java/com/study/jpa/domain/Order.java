@@ -21,8 +21,9 @@ class Order {
     private Long id;
     @ManyToOne
     private Member member;
-    @OneToMany(mappedBy = "order", cascade = CascadeType.PERSIST)
-    private final List<Item> items = new ArrayList<>();
+
+    @OneToMany(mappedBy = "order")
+    private List<OrderItem> orderItems = new ArrayList<>();
     private LocalDateTime orderDate;
     private BigInteger orderPrice;
     @Enumerated(EnumType.STRING)
@@ -35,17 +36,18 @@ class Order {
         this.status = status;
     }
 
-    public static Order makeOrder(Item... items) {
-        BigInteger totalPrice = Arrays.stream(items)
-                .map(item -> item.getPrice())
-                .reduce(BigInteger::add)
-                .get();
-
+    public static Order makeOrder(OrderItem... orderItems) {
+        BigInteger totalPrice = BigInteger.ZERO;
+        for (OrderItem orderItem : orderItems) {
+            int orderCount = orderItem.getCount();
+            BigInteger itemPrice = orderItem.getPrice();
+            totalPrice.add(itemPrice.multiply(BigInteger.valueOf(orderCount)));
+        }
         return new Order(LocalDateTime.now(), totalPrice, Status.ORDER);
     }
 
-    public boolean addItem(Item... items) {
-        Collections.addAll(this.items, items);
+    public boolean addItem(OrderItem... orderItems) {
+        Collections.addAll(this.orderItems, orderItems);
         return true;
     }
 

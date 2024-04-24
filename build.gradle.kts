@@ -9,8 +9,8 @@ repositories {
     mavenCentral()
 }
 
-sourceSets{
-    main{
+sourceSets {
+    main {
         resources {
             srcDirs("src/main/resources/META-INF")
             output.resourcesDir = file("build/classes/")
@@ -32,6 +32,8 @@ dependencies {
     compileOnly("org.projectlombok:lombok:1.18.32")
     testImplementation("org.projectlombok:lombok:1.18.32")
     annotationProcessor("org.projectlombok:lombok:1.18.32")
+
+//    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
 tasks.test {

@@ -6,6 +6,7 @@ import org.hibernate.annotations.GeneratedColumn;
 
 import java.math.BigInteger;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "items")
@@ -13,21 +14,21 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 class Item {
-    // jpa h2 의 기본 전략을
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    // many 가 항상 연관관계의 주인이다.
-    @ManyToOne(cascade = CascadeType.PERSIST)
-    private Order order;
+    // 관계란 엔티티 : 엔티티 간에 형성된다.
+    // 아이템(엔티티)이 여러 주문상품(엔티티) 에 공통으로 포함될 수 있다.
+    // 아이템 1 : 주문상품 N
+    @OneToMany(mappedBy = "item")
+    private List<OrderItem> orderItems;
     private String name;
     private BigInteger price;
     private Integer quantity;
     private LocalDateTime createdAt;
 
     @Builder
-    public Item(Order order, String name, BigInteger price, Integer quantity, LocalDateTime createdAt) {
-        this.order = order;
+    public Item(String name, BigInteger price, Integer quantity, LocalDateTime createdAt) {
         this.name = name;
         this.price = price;
         this.quantity = quantity;
